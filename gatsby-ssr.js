@@ -4,14 +4,14 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-// You can delete this file if you're not using it
 import React from "react"
 import { renderToString } from "react-dom/server"
 import Helmet from "react-helmet"
-import { ServerStyleSheet } from "styled-components"
+import { ServerStyleSheet, ThemeProvider } from "styled-components"
 import { Provider } from "react-redux"
 import { PersistGate } from "redux-persist/integration/react"
 
+import { theme } from './src/lib/constants';
 import configureStore from "./src/redux/configure-store"
 import LoadingPage from "./src/components/Layout/LoadingPage"
 
@@ -46,21 +46,19 @@ export const onRenderBody = ({
 }
 
 const { store, persistor } = configureStore()
-export const wrapRootElement = (
-  { element } // eslint-disable-line
-) => (
+export const wrapRootElement = ({ element }) => (
   <Provider store={store}>
     <PersistGate loading={<LoadingPage />} persistor={persistor}>
       {element}
     </PersistGate>
   </Provider>
-)
+);
 
-// export const wrapPageElement = ({ element, props }) => ( // eslint-disable-line
-//   <ThemeProvider theme={theme}>
-//       <React.Fragment>
-//           <GlobalStyle />
-//           {element}
-//       </React.Fragment>
-//   </ThemeProvider>
-// );
+export const wrapPageElement = ({ element }) => (
+  <ThemeProvider theme={theme}>
+    <>
+      <GlobalStyle />
+      {element}
+    </>
+  </ThemeProvider>
+);

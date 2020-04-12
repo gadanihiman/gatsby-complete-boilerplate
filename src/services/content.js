@@ -1,9 +1,10 @@
+/* eslint-disable import/prefer-default-export */
 import APIRequest from "../lib/request"
 
 export const getExampleDataApi = () => {
   console.log("api getExampleDataApi")
   return APIRequest("/pokemon")
-}
+};
 
 // export const getProductApi = async productId => {
 //   const api = new API();

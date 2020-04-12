@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import { createSelector } from "reselect"
 
 const selectHome = (state) => state.home

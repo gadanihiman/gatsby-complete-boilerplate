@@ -1,7 +1,5 @@
 import React from "react"
-import styled, { css } from "styled-components"
-// import Logo from '../../assets/images/aia-logo.png';
-// import LogoWebp from '../../assets/images/aia-logo.webp';
+import styled from "styled-components"
 
 const Wrapper = styled.div`
   height: 100%;
@@ -33,15 +31,14 @@ const Spinner = styled.div`
   }
 `
 
-const Image = styled.img`
-  width: 84px;
-  height: 84px;
-`
+// const Image = styled.img`
+//   width: 84px;
+//   height: 84px;
+// `
 
 const Title = styled.h4`
   margin-top: 50px;
   margin-bottom: 10px;
-  font-family: AIARegular;
   font-weight: bold;
   font-stretch: normal;
 `
@@ -55,9 +52,6 @@ const Desc = styled.div`
 const Loading = () => {
   return (
     <Wrapper id="snipper_loading">
-      {/* <picture>
-        <Image src={Logo} srcSet={`${LogoWebp}, ${Logo}`} />
-      </picture> */}
       <Title>HANG ON A MOMENT</Title>
       <Desc>Your page is loading...</Desc>
       <Spinner />
