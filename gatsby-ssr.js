@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
  *
@@ -14,6 +15,7 @@ import { PersistGate } from "redux-persist/integration/react"
 import { theme } from './src/lib/constants';
 import configureStore from "./src/redux/configure-store"
 import LoadingPage from "./src/components/Layout/LoadingPage"
+import GlobalStyle from './src/lib/global-styles';
 
 export const replaceRenderer = ({
   bodyComponent,

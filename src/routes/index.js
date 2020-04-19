@@ -3,14 +3,14 @@ const path = require('path');
 module.exports = [
   {
     path: '/',
-    component: path.resolve('src/layouts/index.js'),
+    component: path.resolve('src/pages/index.js'),
   },
   {
-    path: '/page-2',
-    component: path.resolve('src/layouts/page-2.js'),
+    path: '/about-us',
+    component: path.resolve('src/pages/page-2.js'),
   },
   {
     path: '/404',
-    component: path.resolve('src/layouts/404.js'),
+    component: path.resolve('src/pages/404.js'),
   },
 ];

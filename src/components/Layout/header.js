@@ -1,35 +1,47 @@
+import React, { useState } from "react"
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import { Layout, Menu } from 'antd';
+import PropTypes from "prop-types"
+import "./layout.css";
+
+const { Header: HeaderBase } = Layout;
+
+const Header = ({ siteTitle }) => {
+
+  return (
+    <HeaderBase>
+      <div className="logo">
+        <h1 style={{ color: 'white' }}>{siteTitle}</h1>
+      </div>
+      <Menu theme="dark" mode="horizontal">
+        <Menu.Item key="home">
+          <Link
+            to="/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            Home
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="aboutUs">
+          <Link
+            to="/about-us"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            About Us
+          </Link>
+        </Menu.Item>
+      </Menu>
+    </HeaderBase>
+  );
+};
+
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
